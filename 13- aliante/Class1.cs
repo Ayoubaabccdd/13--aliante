@@ -6,31 +6,98 @@ using System.Threading.Tasks;
 
 namespace _13__aliante
 {
-    class Componente
+    interface Componente
     {
-
+        void add();
+        void remove();
+        void Getchild();
     }
 
-    class Aliante
+    class Aliante : Componente
     {
+        public void add()
+        {
+            
+        }
 
+        public void Getchild()
+        {
+            
+        }
+
+        public void remove()
+        {
+            
+        }
     }
 
-    class Ala
+    class Ala : Componente 
     {
+        public void add()
+        {
 
+        }
+
+        public void Getchild()
+        {
+
+        }
+
+        public void remove()
+        {
+
+        }
     }
-    class Fusioliera
+    class Fusioliera : Componente
     {
+        public void add()
+        {
 
+        }
+
+        public void Getchild()
+        {
+
+        }
+
+        public void remove()
+        {
+
+        }
     }
-    class Coda
+    class Coda : Componente
     {
+        public void add()
+        {
 
+        }
+
+        public void Getchild()
+        {
+
+        }
+
+        public void remove()
+        {
+
+        }
     }
-    class Ruota
+    class Ruota : Componente
     {
+        public void add()
+        {
 
+        }
+
+        public void Getchild()
+        {
+
+        }
+
+        public void remove()
+        {
+
+        }
     }
 
 }
