@@ -6,7 +6,7 @@ namespace _13__aliante
         {
             InitializeComponent();
         }
-
+        
 
     }
 }
