@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,19 +18,15 @@ namespace _13__aliante
 
     class Aliante : Componente
     {
-        private string _ala;
-        private string _fusoliera;
-        private string _coda;
-        public Aliante(string ala, string fusoliera, string coda)
+        public List<Componente> componente;
+        public Aliante()
         {
-            this._ala = ala;
-            this._fusoliera = fusoliera;
-            this._coda = coda;
-        }
+            componente = new List<Componente>();
+        }   
 
-        public virtual void descrizione(string descrizione)
+        public virtual void descrizione(Componente componente)
         {
-            Console.WriteLine(descrizione);
+            this.componente.Add(componente);
         }
 
         public void add()
@@ -58,9 +57,9 @@ namespace _13__aliante
             this._apertura = apertura;
             this._costo = costo;
         }
-        public virtual void descrizione(string descrizione)
+        public virtual void descrizione(double lunghezza, double apertura, double costo)
         {
-            Console.WriteLine(descrizione);
+            Console.WriteLine("lunghezza: "+lunghezza+"apertura: "+apertura+"costo: "+costo);
         }
         public virtual void prezzo(double prezzo)
         {
@@ -85,6 +84,18 @@ namespace _13__aliante
     }
     class Fusioliera : Componente
     {
+        private double _lunghezza;
+        private double _materiale;
+        public Fusioliera(double lunghezza, double materiale)
+        {
+            this._lunghezza = lunghezza;
+            this._materiale = materiale;
+        }
+
+        public void descrizione(double lunghezza, double materiale)
+        {
+            Console.WriteLine("lunghezza: " + lunghezza + "materiale: "+ materiale);
+        }
         public void add()
         {
 
@@ -124,7 +135,7 @@ namespace _13__aliante
 
         }
 
-        public void Getchild()
+        public void Getchild()                     
         {
 
         }
